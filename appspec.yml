@@ -4,10 +4,11 @@ files:
   - source: ./
     destination: /home/ec2-user
 hooks:
-  BeforeInstall:
+  AfterInstall:
    - location: install_dependencies.sh
      timeout: 300
-     runas: ubuntu
-  ApplicationStop: 
-     timeout: 10
-     runas: ubuntu
+  ApplicationStart:
+   - location: install_dependencies.sh
+     timeout: 100
+  ApplicationStop:
+    timeout: 100
