@@ -8,3 +8,6 @@ hooks:
    - location: install_dependencies.sh
      timeout: 300
      runas: ubuntu
+  ApplicationStop: 
+     timeout: 10
+     runas: ubuntu
